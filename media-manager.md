@@ -5,7 +5,7 @@ Das Addon dient zum Anpassen von Grafiken und Handling von Dateien anhand von Me
 
 Die durch den Media Manager erstellten Bilddateien werden im Cache abgelegt.
 
-Die am häufigsten benutzten Effekte für den Media Manager sind resize und crop. Damit können Bilder auf eine einheitliche Größe gebracht werden.
+Die am häufigsten benutzten Effekte für den Media Manager sind resize und crop. Damit können Bilder auf eine einheitliche Größe gebracht werden (siehe Beispiel unten).
 
 Folgende Effekte stehen zur Verfügung:
 
@@ -29,20 +29,21 @@ workspace | - Keine Ahnung - (muss ich mir noch anschauen)
 
 Alle Effekte können kaskadiert werden.
 
-### Einen Effekt definieren
+### Beispiel - Einen Effekt definieren und anwenden
 
     - Gehe im Addon-Menü auf den Menüpunkt "Media Manager"
     - Wähle in der Tabelle links oben das Plus-Zeichen (+)
     - Schreibe bei Name einen Namen, unter dem der Effekt verfügbar sein soll. Der Name wird für den Aufruf des Effekts über die Url verwendet (z.B. thumb_small)
     - Schreibe eine kurze Beschreibung zum Effekt (z.B. Galerie Vorschaubilder 120 x 120 Pixel)
-    - Speichere den Effekt und wähle dann "Effekt bearbeiten"
-    - 
+    - Speichere den neuen Bildtyp und wähle dann "Effekt bearbeiten"
+    - Füge einen Effekt mit dem kleinen Plus-Zeichen (+) hinzu. Wähle z.B. "resize"
+    - Gebe als Zielbreite und als Zielhöhe jeweils 120 ein, wähle Modus "minimum" und Wenn Bild zu klein "enlarge"
+    - Speichere den Effekt
+    - Füge den Effekt "crop" hinzu. Zielbreite und Zielhöhe jeweils 120. Horizontale Ausrichtung: center, vertikale Ausrichtung: middle
+    - Speichere den Effekt
     
+Den Effekt kannst Du nun bereits prüfen, indem Du im Browser die Url zum Bild eingibst:
 
+http://example.com/index.php?rex_media_type=thumb_small&rex_media_file=bilddatei_aus_dem_medienpool.jpg
 
-### Beispiel einer Filterdefinition:
-
-resize min 800px / min 600 / Vergrößerung ja
-crop 800px / 600px
-
-Erzeugt aus jeder Quelldatei ein Bild in 800 x 600 Pixel Größe
+Die Bilddatei bilddatei_aus_dem_medienpool.jpg muss schon im Medienpool angelegt sein.
