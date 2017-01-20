@@ -36,16 +36,16 @@ In der Konfiguration des Media Managers kann die gewünschte Komprimierung für 
 
 ### Beispiel - Einen Effekt definieren und anwenden
 
-    - Gehe im Addon-Menü auf den Menüpunkt "Media Manager"
-    - Wähle in der Tabelle links oben das Plus-Zeichen (+)
-    - Schreibe bei Name einen Namen, unter dem der Effekt verfügbar sein soll. Der Name wird für den Aufruf des Effekts über die Url verwendet (z.B. thumb_small)
-    - Schreibe eine kurze Beschreibung zum Effekt (z.B. Galerie Vorschaubilder 120 x 120 Pixel)
-    - Speichere den neuen Bildtyp und wähle dann "Effekt bearbeiten"
-    - Füge einen Effekt mit dem kleinen Plus-Zeichen (+) hinzu. Wähle z.B. "resize"
-    - Gebe als Zielbreite und als Zielhöhe jeweils 120 ein, wähle Modus "minimum" und Wenn Bild zu klein "enlarge"
-    - Speichere den Effekt
-    - Füge den Effekt "crop" hinzu. Zielbreite und Zielhöhe jeweils 120. Horizontale Ausrichtung: center, vertikale Ausrichtung: middle
-    - Speichere den Effekt
+- Gehe im Addon-Menü auf den Menüpunkt "Media Manager"
+- Wähle in der Tabelle links oben das Plus-Zeichen (+)
+- Schreibe bei Name einen Namen, unter dem der Effekt verfügbar sein soll. Der Name wird für den Aufruf des Effekts über die Url verwendet (z.B. thumb_small)
+- Schreibe eine kurze Beschreibung zum Effekt (z.B. Galerie Vorschaubilder 120 x 120 Pixel)
+- Speichere den neuen Bildtyp und wähle dann "Effekt bearbeiten"
+- Füge einen Effekt mit dem kleinen Plus-Zeichen (+) hinzu. Wähle z.B. "resize"
+- Gebe als Zielbreite und als Zielhöhe jeweils 120 ein, wähle Modus "minimum" und Wenn Bild zu klein "enlarge"
+- Speichere den Effekt
+- Füge den Effekt "crop" hinzu. Zielbreite und Zielhöhe jeweils 120. Horizontale Ausrichtung: center, vertikale Ausrichtung: middle
+- Speichere den Effekt
     
 Den Effekt kannst Du nun bereits prüfen, indem Du im Browser die Url zum Bild eingibst:
 
