@@ -29,6 +29,10 @@ workspace | - Keine Ahnung - (muss ich mir noch anschauen)
 
 Alle Effekte können kaskadiert werden.
 
+### Konfiguration des Media Managers
+
+In der Konfiguration des Media Managers kann die gewünschte Komprimierung für die erzeugten jpg-Dateien angegeben werden. Ein hoher Wert ergibt ein besseres Ergebnis und größere Bilddateien, bei einem niedrigeren Wert gehen mehr Bilddetails verloren, es entstehen aber kleinere Bilddateien.
+
 ### Beispiel - Einen Effekt definieren und anwenden
 
     - Gehe im Addon-Menü auf den Menüpunkt "Media Manager"
