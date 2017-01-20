@@ -1,9 +1,9 @@
 # Media Manager
 
 Der Media Manager ist ein Basis Addon von Redaxo, welches bereits mit der Grundinstallation installiert und aktiviert wird.
-Das Addon dient zum Anpassen von Grafiken und Handling von Dateien anhand von Mediatypen. Die Mediatypen werden in der Verwaltung des Addons erstellt und konfiguriert. Jeder Mediatyp kann beliebig viele Effekte enthalten, die auf das aktuelle Medium angewendet werden. Zum einbinden eines Mediums muss dazu der Mediatyp in der Url notiert werden.
+Das Addon dient zum Anpassen von Grafiken und Handling von Dateien anhand von Mediatypen. Die Mediatypen werden in der Verwaltung des Addons erstellt und konfiguriert. Jeder Mediatyp kann beliebig viele Effekte enthalten, die auf das aktuelle Medium angewendet werden. Zum einbinden eines Mediums muss dazu der Mediatyp in der Url notiert werden (Beispiel siehe unten).
 
-Die durch den Media Manager erstellten Bilddateien werden im Cache abgelegt.
+Die durch den Media Manager erstellten Bilddateien werden in einem eigenen Cache abgelegt, der bei Bedarf auch für jeden einzelnen Bildtyp gelöscht werden kann.
 
 Die am häufigsten benutzten Effekte für den Media Manager sind resize und crop. Damit können Bilder auf eine einheitliche Größe gebracht werden (siehe Beispiel unten).
 
@@ -24,6 +24,7 @@ insert_image | Ein Bild in ein anderes kopieren (z.B. für Wasserzeichen)
 mediapath |  - Keine Ahnung - (muss ich mir noch anschauen)
 mirror | Kann irgendeinen Spiegelungseffekt (muss ich mir noch anschauen)
 resize | verkleinern / vergrößern unter Angabe der gewünschten Breite bzw. Höhe in Pixel. Die Werte können optional als minimal, maximal oder exakt angegeben werden
+rotate | Effekt um ein Bild zu drehen (90, 180 oder 270 Grad)
 rounded_corners | braucht kein Mensch, dafür gibt es CSS
 workspace | - Keine Ahnung - (muss ich mir noch anschauen)
 
@@ -50,4 +51,4 @@ Den Effekt kannst Du nun bereits prüfen, indem Du im Browser die Url zum Bild e
 
 http://example.com/index.php?rex_media_type=thumb_small&rex_media_file=bilddatei_aus_dem_medienpool.jpg
 
-Die Bilddatei bilddatei_aus_dem_medienpool.jpg muss schon im Medienpool angelegt sein.
+Die Bilddatei bilddatei_aus_dem_medienpool.jpg muss schon im Medienpool angelegt sein bzw. im Verzeichnis media liegen.
