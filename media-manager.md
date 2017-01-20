@@ -19,14 +19,14 @@ filter_greyscale | Bild in Graustufen umwandeln
 filter_sepia | Bild mit Sepiatönung versehen
 filter_sharpen | Scharfzeichnen eines Bildes
 flip | Kann ein Bild horizontal oder vertikal spiegeln
-header | - Keine Ahnung - (muss ich mir noch anschauen)
+header | das Medium wird nicht im Browser angezeigt sondern als Download ausgegeben
 insert_image | Ein Bild in ein anderes kopieren (z.B. für Wasserzeichen)
-mediapath |  - Keine Ahnung - (muss ich mir noch anschauen)
+mediapath | das Medium wird in einem von media abweichenden Pfad gesucht
 mirror | Kann irgendeinen Spiegelungseffekt (muss ich mir noch anschauen)
 resize | verkleinern / vergrößern unter Angabe der gewünschten Breite bzw. Höhe in Pixel. Die Werte können optional als minimal, maximal oder exakt angegeben werden
 rotate | Effekt um ein Bild zu drehen (90, 180 oder 270 Grad)
 rounded_corners | braucht kein Mensch, dafür gibt es CSS
-workspace | - Keine Ahnung - (muss ich mir noch anschauen)
+workspace | Hier kann eine Zeichenfläche inkl. Hintergrundfarbe definiert werden auf der das Medium platziert wird.
 
 Alle Effekte können kaskadiert werden.
 
