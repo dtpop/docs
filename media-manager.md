@@ -52,3 +52,34 @@ Den Effekt kannst Du nun bereits prüfen, indem Du im Browser die Url zum Bild e
 http://example.com/index.php?rex_media_type=thumb_small&rex_media_file=bilddatei_aus_dem_medienpool.jpg
 
 Die Bilddatei bilddatei_aus_dem_medienpool.jpg muss schon im Medienpool angelegt sein bzw. im Verzeichnis media liegen.
+
+### Vordefinierte Medientypen
+
+Bei der Installation von Redaxo werden bereits einige Medientypen definiert, die intern für beispielsweise für den Medienpool verwendet werden.
+
+Medientyp | Beschreibung
+------------- | -------------
+rex_mediabutton_preview | resize auf max. 246 x 246 px
+rex_medialistbutton_preview | resize auf max. 246 x 246 px
+rex_mediapool_detail | resize auf max. 200 x 200 px
+rex_mediapool_maximized | resize auf max. 600 x 600 px
+rex_mediapool_preview | resize auf max. 80 x 80 px
+
+Diese Medientypen können auch für eigene Zwecke verwendet werden, beispielsweise um in Modulen im Backend eine Vorschau der Bilder anzuzeigen.
+
+Beispiel einer Modulausgabe:
+
+    <?php
+    $imagelist = explode(',', "REX_MEDIALIST[1]");
+    $mediatype = rex::isBackend() ? 'rex_mediabutton_preview' : 'mein_eigener_medientyp';
+    ?>
+    
+    <ul class="meinebildgalerie">
+    <?php foreach ($imagelist as $img) : ?>
+        <li class="meinebildergalerie_li">
+            <img src="<?= rex::getServer ?>index.php?rex_media_type=<?= $mediatype ?>&rex_media_file=<?= $img ?>">
+        </li>    
+    <?php endforeach ?>
+    </ul>
+
+Das Beispielmodul gibt im Backend die Bilder aus der REX_MEDIALIST[1] in einer Größe von maximal 246 x 246 Pixel aus, im Frontend werden die Bilder mit dem selbst definierten Medientyp mein_eigener_medientyp ausgegeben.
