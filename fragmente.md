@@ -2,6 +2,7 @@
 
 Fragmente werden in REDAXO eingesetzt, um wiederkehrende Codeschnippsel übersichtlich zu verwalten. Fragmente sind PHP Dateien und werden bei der Ausgabe geparst, sodass Variablen ausgegeben und verarbeitet werden können. In REDAXO selbst werden zahlreiche Fragmente für die Ausgabe des Backends verwendet. Diese Fragmente können auch als Ausgangsbasis für eigene Fragmente genutzt werden. Grundsätzlich wird ein Fragment in dieser Form angesrochen und ausgegeben:
 
+    $fragment = new rex_fragment();
     $fragment->parse('meinfragment.php');
     
 Fragmente, die in addons im Verzeichnis fragments abgelegt werden, werden ohne Pfadangabe gefunden.
