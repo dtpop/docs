@@ -26,9 +26,11 @@ Wenn eine Variable vom Typ Array übergeben wird, so kann dieses Array durchlauf
     
 Ausgabe im Fragment:
 
+    <ul>
     <?php foreach ($this->monate as $monat) : ?>
       <li><?= $monat ?></li>
     <?php endforeach ?>
+    </ul>
     
 
     
