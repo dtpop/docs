@@ -23,4 +23,15 @@ ausgelesen werden.
 Damit kann der Pager berechnen, wie viele Seiten für die Darstellung aller Datensätze benötigt werden. Der Wert kann mit
 
     <?php $totalPages = $pager->getPageCount() ?>
+    
+Eine einfache Ausgabe, z.B. in einem Modul, könnte dann so aussehen:
 
+        <?php
+        echo '<ul>';
+            for ($page = $pager->getFirstPage(); $page <= $pager->getLastPage(); ++$page) {
+                echo '<li><a href="'.rex_getUrl(rex_article::getCurrentId(),'',[$pager->getCursorName() => $pager->getCursor($page)]).'">'.($page + 1).'</a></li>';    
+            }
+        echo '</ul>';
+        ?>
+
+Eine etwas komplexere Ausgabe steht im Fragment fragments/core/navigations/pagination.php. Ein Beispiel einer kompletten Ausgabe einer Paginierung mit diesem Fragment steht im Kapitel Fragmente.
