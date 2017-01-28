@@ -1,10 +1,10 @@
 # Paginierung
 
-Paginierungen werden für unterschiedlichste Zwecke eingesetzt. Genannt seien hier Datensätze einer Liste oder Newseinträge in einem Archiv. Paginierungen können im Backend und im Frontend eingesetzt werden. Genau zu diesen Zwecken kann man die in REDAXO vorgefertigte Paginierungsklasse rex_pager einsetzen. Der rex_pager erstellt die Paginierung. Die Anzeige der jeweiligen Inhalte (Datensätze, Artikel etc.) wird unabhängig davon programmiert.
+Paginierungen werden für unterschiedlichste Zwecke eingesetzt. Genannt seien hier Datensätze einer Liste oder Newseinträge in einem Archiv. Paginierungen können im Backend und im Frontend eingesetzt werden. Genau zu diesen Zwecken kann man die in REDAXO vorgefertigte Paginierungsklasse rex_pager einsetzen. Das rex_pager Objekt ist für die Paginierung zuständig. Die Anzeige der jeweiligen Inhalte (Datensätze, Artikel etc.) wird unabhängig davon programmiert.
 
 Wir beginnen direkt mit einem Beispiel.
 
-    <?php $pager = rex_pager::factory(50,'offset') ?>
+    <?php $pager = new rex_pager(50,'offset') ?>
     
 erstellt ein neues Paginierungsobjekt, es werden maximal 50 Einträge pro Seite angezeigt. Standard ist 30. Der Parameter, der die Paginierung steuert, heißt in unserem Beispiel *offset*. Standard ist *start*.
 
@@ -23,3 +23,4 @@ ausgelesen werden.
 Damit kann der Pager berechnen, wie viele Seiten für die Darstellung aller Datensätze benötigt werden. Der Wert kann mit
 
     <?php $totalPages = $pager->getPageCount() ?>
+
