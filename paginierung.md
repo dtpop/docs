@@ -79,7 +79,7 @@ Weitere Methoden der rex_pager Klasse sind
         
 Ein weiteres Beispiel einer Ausgabe zeigt, wie man die Klasse rex_pager verwenden kann, um einen Pager anzuzeigen, der nicht alle Seiten ausgibt, sondern Bereiche zwischen dem Anfang und der aktuellen Position und dem Ende auslässt. Die Ausgabe könnte dann so aussehen:
 
-1 - 2 - 3 ... 70 - 71 - *72* - 73 - 74 ... 150 - 151 - 152
+1 - 2 - 3 ... 70 - 71 - **72** - 73 - 74 ... 150 - 151 - 152
 
 Aktuelle Seite wäre in diesem Beispiel die Seite 72
 
