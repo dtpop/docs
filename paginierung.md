@@ -10,6 +10,8 @@ erstellt ein neues Paginierungsobjekt, es werden maximal 50 Einträge pro Seite 
 
 Der Wert *offset* wird als get oder post Parameter erwartet und gibt die Anzahl der Datensätze an, ab der die Anzeige beginnt. Wir können also diesen Parameter nutzen und in eine SQL-Abfrage zur Anzeige einbauen.
 
+*Hinweis* Die interne Zählung für die Seitennummer des rex_pager Objekts beginnt bei 0.
+
 Mit
 
     <?php $pager->setRowCount(123) ?>
@@ -35,3 +37,44 @@ Eine einfache Ausgabe, z.B. in einem Modul, könnte dann so aussehen:
         ?>
 
 Eine etwas komplexere Ausgabe steht im Fragment fragments/core/navigations/pagination.php. Ein Beispiel einer kompletten Ausgabe einer Paginierung mit diesem Fragment steht im Kapitel Fragmente.
+
+Weitere Methoden der rex_pager Klasse sind
+
+        <?php
+        // Anzahl Elemente pro Seite (Standard 30)
+        $rowsPerPage = getRowsPerPage();
+        
+        // Liefert den Wert des aktuellen Cursors
+        // bei optionaler Übergabe einer Seitenzahl den Cursorwert der Seite
+        $cursor = getCursor( integer $pageNo = null );
+        
+        // prüft den übergebenen Cursorwert
+        // Rückgabe: 1, wenn der Cursorwert innerhalb des definierten Bereiches ist
+        //           0, wenn der Cursorwert nicht innerhalb des Bereiches liegt
+        $isValidCursor = validateCursor( integer $cursor );
+        
+        // Liefert den Name des Cursors. Standard ist "start"
+        $cursorName = getCursorName( );
+        
+        // Gibt 0 zurück, da der Offset für die erste Seite immer 0 ist        
+        $offsetForFirstPage = getFirstPage( );
+        
+        // Gibt die Seitennummer für die vorhergehenden Seite zurück
+        // Wert ist nie kleiner als die kleinste mögliche Seitennummer
+        $prevPageNo = getPrevPage( );
+        
+        // Gibt die Seitennummer der aktuellen Seite zurück oder 0
+        $currentPageNo = getCurrentPage( );
+        
+        // Gibt die Seitennummer für die nächste Seite zurück
+        // Wert ist nie größer als die höchste mögliche Seitennummer
+        $nextPageNo = getNextPage( );
+        
+        // Gibt die höchste mögliche Seitennummer zurück
+        $lastPageNo = getLastPage( );
+        
+        // gibt true zurück, wenn der Cursor auf der übergebenen Seitennummer steht
+        $isActivePage = isActivePage( integer $pageNo );
+        ?>
+        
+        
