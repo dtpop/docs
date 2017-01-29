@@ -77,4 +77,31 @@ Weitere Methoden der rex_pager Klasse sind
         $isActivePage = $pager->isActivePage( integer $pageNo );
         ?>
         
+Ein weiteres Beispiel einer Ausgabe zeigt, wie man die Klasse rex_pager verwenden kann, um einen Pager anzuzeigen, der nicht alle Seiten ausgibt, sondern Bereiche zwischen dem Anfang und der aktuellen Position und dem Ende auslässt. Die Ausgabe könnte dann so aussehen:
+
+1 - 2 - 3 ... 70 - 71 - *72* - 73 - 74 ... 150 - 151 - 152
+
+Aktuelle Seite wäre in diesem Beispiel die Seite 72
+
+        $distance = 3; // Wert, der bestimmt wieviele Seiten vor bzw. nach der aktuellen Seite angezeigt werden sollen.
+
+        $lastPageShown = 0;
+
+        echo '<ul>';
+        for ($page = $pager->getFirstPage(); $page <= $pager->getLastPage(); ++$page) {
+            $show = false;
+            if ($page < $distance) $show = true;
+            if (abs($page - $pager->getCurrentPage()) < $distance) $show = true; 
+            if ($page + $distance > $pager->getLastPage()) $show = true;
+            if ($show) {
+                if (($page-1) > $lastPageShown) {
+                    echo '<li>...</li>';
+                }
+                echo '<li><a href="'.rex_getUrl(rex_article::getCurrentId(),'',[$pager->getCursorName() => $pager->getCursor($page)]).'">'.($page + 1).'</a></li>';
+                $lastPageShown = $page;
+            }
+        }
+        echo '</ul>';
+
+
         
